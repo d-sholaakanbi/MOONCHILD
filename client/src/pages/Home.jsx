@@ -1,26 +1,18 @@
 import React from 'react'
-import Navhead from '../components/Navhead'
-import imag from '../images/Component 1.jpg'
+import HeroProduct from '../component/HeroProduct'
+import useFetch from "../Hooks/useFetch"
+import HeroCategory from '../component/HeroCategory'
+import FeatureProduct from '../component/FeatureProduct'
 
-export default function Home () {
+
+export default function Home() {
+  const {data, error, loading} = useFetch("https://ecommtest.onrender.com/products")
+
   return (
     <>
-    <Navhead text1='New Task' text2='All Tasks'/>
-    <div className='d-flex justify-content-between px-3 container mt-5'>
-        <div className='task' >
-            <h1>Manage your Tasks on <span style={{color:'#974fd0'}}>TaskDuty</span></h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa corporis nemo voluptatum itaque distinctio ab adipisci, a unde, quisquam fuga eaque debitis explicabo facilis quaerat deserunt blanditiis labore repellendus assumenda?
-            </p>
-            <a href="/MyTaskPage"><button className='bton'>Go to My Tasks</button></a>
-        </div>
-        <div>
-            <img src={imag} alt=''/>
-
-        </div>
-
-    </div>
+        <HeroProduct data={data} error={error} loading={loading}/>
+        <HeroCategory/>
+        <FeatureProduct data={data} error={error} loading={loading}/>
     </>
-    
   )
 }

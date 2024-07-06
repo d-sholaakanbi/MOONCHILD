@@ -1,104 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 *{
-    margin: 0;
-    padding: 0;
-    text-decoration: none!important; 
-    font-family: 'Signika Negative';
-  
+  font-family: "Bebas Neue", cursive;
+  text-decoration: none !important;
+}
+
+.scrollbody {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+}
+
+.scrollbody::-webkit-scrollbar {
+  display: none;
+}
+
+.no-outline:focus {
+outline: none;
+}
+.moon{
+  padding-left: 400px;
+}
+.login {
+  width: 600px;
+  height: 645px;
+  background-color: white;
+  border: #292929 1px solid;
+}
+
+.form1 {
+  margin-top: 80px;
+}
+
+.form2 {
+  margin-top: 1rem;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 300px;
+}
+.boxa {
+  background-image: url("./images/BackgroungImg.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+}
+
+.form4 {
+  margin-top: 40px;
+}
+
+.form3 {
+  border: none;
+  border-bottom: 1px solid black;
+  width: 300px;
+}
+
+
+@media screen and (min-width: 768px) {
+  .adjustImg {
+    width: 400px !important;
+    height: 600px !important;
   }
-
-  .task{
-    width: 535px;
-  }
-
-  .task > h1 {
-    font-weight: 500;
-    font-size: 50px;
-    line-height: 62px;
-    color: #292929;
-
-  }
-
-  .task > p {
-    font-weight: 400;
-    line-height: 30px;
-    color: #737171;
-    padding-bottom: 30px;
-  }
-
-
-  .bton{
-    width: 201px;
-    height: 50px;
-    background: #974fd0;
-    border-radius: 8px;
-    border: none;
-    font-weight: 500;
-    line-height: 30px;
-    font-size: 24px;
-    color: #faf9fb;
-  }
-
-  .dbtn{
-    background: #974FD0;
-    border-radius: 8px;
-    width: 126px;
-    height: 50px;
-    border: none;
-    font-size: 24px;
-    line-height: 30px;
-    color: #faf9fb;
-    font-weight: 500;
-
-  }
-
-  .dbtn1{
-    background: #faf9fb;
-    border-radius: 8px;
-    width: 126px;
-    height: 50px;
-    border: none;
-    font-size: 24px;
-    line-height: 30px;
-    color: #974FD0;
-    font-weight: 500;
-
-  }
-
-  .fbtn{
-    background: #974FD0;
-    border-radius: 8px;
-    width: 1100px;
-    height: 50px;
-    border: none;
-    font-size: 35px;
-    line-height: 43px;
-    color: #faf9fb;
-    font-weight: 500;
-
-  }
-
-  .frem{
-     position: absolute;
-     width: 1100px;
-     height: 40px;
-     border: 1px solid #B8B6B6;
-     border-radius: 5px;
-  }
-
-  .hert{
-    position: absolute;
-    width: 1100px;
-    height: 244px;
-    border: 1px solid #B8B6B6;
-    border-radius: 5px;
-  }
-
-
-  .box{
-    margin-top: 25vh !important;
-
-  }
-
-  
+}
