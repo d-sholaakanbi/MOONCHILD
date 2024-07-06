@@ -12,6 +12,7 @@ import Search from './Pages/Search';
 import { StateContext } from './Lib/ContextApi';
 import { Toaster } from 'react-hot-toast';
 import Cart from './Pages/Cart';
+import Profile from './Pages/loginPage';
 
 
 
@@ -31,6 +32,7 @@ function App() {
         </Route>
         <Route path="search" element={<Search/>} />
         <Route path="cart" element={<Cart/>} />
+        <Route path="profile" element={<Profile/>} />
      </Routes>
      <Footer/>
      </StateContext>

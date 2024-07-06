@@ -31,6 +31,8 @@ app.use(cors()); // Enable CORS for all origins
 // Import routes
 const categoryRouter = require("./PRODUCTS/routes/categoriesRouter");
 const productsRouter = require("./PRODUCTS/routes/productRouter");
+console.log("Using category routes");  // Add this before app.use('/api', categoryRoutes);
+
 
 // Use routes
 app.use('/api/categories', categoryRouter);
@@ -42,7 +44,7 @@ app.use(errorHandler);
 // Not found middleware
 app.use(notFound);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });

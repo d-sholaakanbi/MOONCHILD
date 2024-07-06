@@ -18,6 +18,43 @@
 .no-outline:focus {
 outline: none;
 }
+.moon{
+  padding-left: 400px;
+}
+.login {
+  width: 600px;
+  height: 645px;
+  background-color: white;
+  border: #292929 1px solid;
+}
+
+.form1 {
+  margin-top: 80px;
+}
+
+.form2 {
+  margin-top: 1rem;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 300px;
+}
+.boxa {
+  background-image: url("./images/BackgroungImg.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+}
+
+.form4 {
+  margin-top: 40px;
+}
+
+.form3 {
+  border: none;
+  border-bottom: 1px solid black;
+  width: 300px;
+}
+
 
 @media screen and (min-width: 768px) {
   .adjustImg {
