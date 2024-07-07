@@ -2,17 +2,17 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavHead from './component/NavHead';
 import {Routes, Route} from 'react-router-dom';
-import Home from './Pages/Home'
+import Home from './pages/Home'
 import Footer from './component/Footer';
-import Product from './Pages/Product';
-import Productid from './Pages/Productid';
-import Category from './Pages/Category';
-import CategoryId from './Pages/CategoryId'
-import Search from './Pages/Search';
+import Product from './pages/Product';
+import Productid from './pages/Productid';
+import Category from './pages/Category';
+import CategoryId from './pages/CategoryId'
+import Search from './pages/Search';
 import { StateContext } from './Lib/ContextApi';
 import { Toaster } from 'react-hot-toast';
-import Cart from './Pages/Cart';
-import Profile from './Pages/loginPage';
+import Cart from './pages/Cart';
+import Profile from './pages/loginPage';
 
 
 
