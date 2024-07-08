@@ -12,7 +12,7 @@ import Search from './pages/Search';
 import { StateContext } from './Lib/ContextApi';
 import { Toaster } from 'react-hot-toast';
 import Cart from './pages/Cart';
-import Profile from './pages/loginPage';
+// import Profile from './pages/loginPage';
 
 
 
