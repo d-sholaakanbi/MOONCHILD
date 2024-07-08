@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const errorHandler = require('./PRODUCTS/middleware/errorHandler');
 const notFound = require('./PRODUCTS/middleware/notFoundRoutes');
+const notFoundUsers = require('./AUTH/middleware/notFound');
 
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -31,18 +32,21 @@ app.use(cors()); // Enable CORS for all origins
 // Import routes
 const categoryRouter = require("./PRODUCTS/routes/categoriesRouter");
 const productsRouter = require("./PRODUCTS/routes/productRouter");
-console.log("Using category routes");  // Add this before app.use('/api', categoryRoutes);
+console.log("Using category routes"); 
 
+const userRouter = require("./AUTH/routes/user")
 
 // Use routes
 app.use('/api/categories', categoryRouter);
 app.use('/api/products', productsRouter);
+app.use('/api', userRouter);
 
 // Error handling middleware
 app.use(errorHandler);
 
 // Not found middleware
 app.use(notFound);
+app.use(notFoundUsers);
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
