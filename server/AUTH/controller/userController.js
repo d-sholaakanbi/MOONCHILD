@@ -1,4 +1,4 @@
-const User = require('../models/user');
+const User = require('../models/users');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const handleErrors = require('../middleware/handleErrors');
@@ -22,7 +22,7 @@ const signup = async (req, res) => {
         return res.status(400).json({ success: false, message: "Email has been used" });
     }
 
-    const salt = await bcrypt.genSalt();
+    const salt = await bcrypt.genSalt(12);
     const hashedPassword = await bcrypt.hash(password, salt);
 
     try {
@@ -46,15 +46,29 @@ const login = async (req, res) => {
         const user = await User.findOne({ email });
 
         if (!user) {
-            throw new Error('User not registered yet');
+            return res.status(400).json({
+                success: false,
+                errors: {
+                    email: "Invalid Email or Password",
+                    password: "Invalid Email or Password"
+                }
+            });
         }
 
+        // Compare the provided plain password with the stored hashed password
         const authenticated = await bcrypt.compare(password, user.password);
 
         if (!authenticated) {
-            throw new Error('Invalid email or password');
+            return res.status(400).json({
+                success: false,
+                errors: {
+                    email: "Invalid Email or Password",
+                    password: "Invalid Email or Password"
+                }
+            });
         }
 
+        // Generate JWT token and set cookie
         const token = generateToken(user._id);
         res.cookie('jwt', token, { maxAge: 60 * 60 * 1000 });
         return res.status(200).json({ success: true, data: user });
@@ -64,4 +78,11 @@ const login = async (req, res) => {
     }
 };
 
-module.exports = { signup, login };
+
+const logout = (req, res) => {
+    res.cookie('jwt', '', {maxAge: 1000})
+    res.redirect('/login')
+};
+
+
+module.exports = { signup, login, logout };
