@@ -32,6 +32,8 @@ app.use(cors()); // Enable CORS for all origins
 // Import routes
 const categoryRouter = require("./PRODUCTS/routes/categoriesRouter");
 const productsRouter = require("./PRODUCTS/routes/productRouter");
+console.log("Using category routes"); 
+
 const userRouter = require("./AUTH/routes/user")
 
 // Use routes
