@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const Users = require('../model/user')
+const Users = require('../../middleware/AUTH/auth')
 
 //check the token
 //verified

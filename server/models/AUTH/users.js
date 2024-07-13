@@ -1,12 +1,8 @@
+// User model
 const mongoose = require('mongoose');
-const { v4: uuidv4 } = require('uuid');
 const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
-    _id: {
-        type: String,
-        default: uuidv4
-    },
     firstname: {
         type: String,
         required: true
