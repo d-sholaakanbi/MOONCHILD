@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 const express = require('express');
 const app = express();
-const errorHandler = require('./PRODUCTS/middleware/errorHandler');
-const notFound = require('./PRODUCTS/middleware/notFoundRoutes');
-const notFoundUsers = require('./AUTH/middleware/notFound');
+const errorHandler = require('./middleware/PRODUCTS/errorHandler');
+const notFound = require('./middleware/PRODUCTS/notFoundRoutes');
+const notFoundUsers = require('./middleware/AUTH/notFound');
 
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -30,11 +30,10 @@ app.use(cookieParser());
 app.use(cors()); // Enable CORS for all origins
 
 // Import routes
-const categoryRouter = require("./PRODUCTS/routes/categoriesRouter");
-const productsRouter = require("./PRODUCTS/routes/productRouter");
-console.log("Using category routes"); 
+const categoryRouter = require("./routes/PRODUCTS/categoriesRouter");
+const productsRouter = require("./routes/PRODUCTS/productRouter");
 
-const userRouter = require("./AUTH/routes/user")
+const userRouter = require("./routes/AUTH/user")
 
 // Use routes
 app.use('/api/categories', categoryRouter);

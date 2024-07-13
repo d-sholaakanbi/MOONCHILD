@@ -12,21 +12,20 @@ export default function Categoryid() {
   return (
     <Container style={{marginTop: '5rem'}}>
         {loading && <Spinner/>}
-        {error || data && (<>
-        {error && <p>{error.message}</p>}
-        {data && (
-             <ResponsiveMasonry columnsCountBreakPoints={{350: 2, 750: 3, 900: 3, 1200: 4}} className="">
-             <Masonry gutter='30px'>
-                 {data.map((product) =>(
-                     <ProductContainer key={product.id} {...product}/>
-                 ))}
-
-             </Masonry>
-
-     </ResponsiveMasonry>
+        {(error || data) && (
+          <>
+            {error && <p>{error.message}</p>}
+            {data && (
+              <ResponsiveMasonry columnsCountBreakPoints={{350: 2, 750: 3, 900: 3, 1200: 4}} className="">
+                <Masonry gutter='30px'>
+                  {data.map((product) => (
+                    <ProductContainer key={product.id} {...product}/>
+                  ))}
+                </Masonry>
+              </ResponsiveMasonry>
+            )}
+          </>
         )}
-        </>)}
-    
     </Container>
   )
 }

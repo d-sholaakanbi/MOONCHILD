@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Container} from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom';
-import Logo from '../Images/Logo.svg'
+
 
 export default function Signup() {
   const [firstName, setfirstName] = useState('');
@@ -38,13 +38,10 @@ const redirect = useNavigate();
 
   return (
     <>
-    <div className='boxa'>
+    <div>
     <Container className=' text-center login'>
-    <Link to="/">
-      <img src={Logo} alt="" className='mt-5'/>
-      </Link>
         <div className='text-center form4'>
-        <h2>Join Post<span className='B'>it.</span></h2>
+        <h2>Join MoonChild</h2>
         <form onSubmit={signup} className='mb-2'>
         <label htmlFor="firstName" className='mt-3'> First Name</label><br />
         <input type="text" required id='firstName' name='firstName' value={firstName} onChange={(e)=> setfirstName(e.target.value)} className='form3' /><br />

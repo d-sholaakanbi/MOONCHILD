@@ -38,8 +38,8 @@ export default function Footer() {
         <h1>JOIN OUR NEWSLETTER</h1>
         <div className='d-md-flex gap-4 justify-content-center align-items-center'>
           {links.map((item) => (
-            <a href={`${item.href}`} target='_blank' key={item.id}>
-              <p className='text-uppercase font-normal text-sm text-black-50'>
+            <a href={`${item.href}`} target='_blank' rel='noopener noreferrer' key={item.id}>
+            <p className='text-uppercase font-normal text-sm text-black-50'>
                 {item.name}
               </p>
             </a>
