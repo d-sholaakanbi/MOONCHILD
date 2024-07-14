@@ -13,33 +13,34 @@ import { StateContext } from './Lib/ContextApi';
 import { Toaster } from 'react-hot-toast';
 import Cart from './pages/Cart';
 import Login from './pages/loginPage';
-import Signup from './pages/Signup';
+import Signup from './pages/signup';
 
 function App() {
   const location = useLocation();
   const isAuthPage = location.pathname === '/login' || location.pathname === '/signup';
+  console.log('Current Path:', location.pathname);
+  console.log('Is Auth Page:', isAuthPage);
+
 
   return (
-    <>
-      <StateContext>
-        <Toaster />
-        {!isAuthPage && <NavHead />}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="product" element={<Product />}>
-            <Route path=":productid" element={<Productid />} />
-          </Route>
-          <Route path="categories" element={<Category />}>
-            <Route path=":categoryid" element={<CategoryId />} />
-          </Route>
-          <Route path="search" element={<Search />} />
-          <Route path="cart" element={<Cart />} />
-          <Route path="login" element={<Login />} />
-          <Route path="signup" element={<Signup />} />
-        </Routes>
-        {!isAuthPage && <Footer />}
-      </StateContext>
-    </>
+    <StateContext>
+      <Toaster />
+      {!isAuthPage && <NavHead />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="product" element={<Product />}>
+          <Route path=":productid" element={<Productid />} />
+        </Route>
+        <Route path="categories" element={<Category />}>
+          <Route path=":categoryid" element={<CategoryId />} />
+        </Route>
+        <Route path="search" element={<Search />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path="login" element={<Login />} />
+        <Route path="signup" element={<Signup />} />
+      </Routes>
+      {!isAuthPage && <Footer />}
+    </StateContext>
   );
 }
 

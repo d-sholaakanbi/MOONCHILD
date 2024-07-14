@@ -8,11 +8,12 @@ export default function Signup() {
   const [firstName, setfirstName] = useState('');
   const [lastName, setlastName] = useState('');
   const [gender, setGender] = useState('');
+  const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [load, setLoad]=useState('');
   const [error, setError] = useState('');
-  const url = 'http://localhost:3000/api/signup';
+  const url = 'https://moonchildapi.onrender.com';
 
 
 const redirect = useNavigate();
@@ -22,7 +23,7 @@ const redirect = useNavigate();
     const res = await fetch (url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify ({firstName,lastName,gender,email,password})
+      body: JSON.stringify ({firstName,lastName,userName,gender,email,password})
     });
     const data = await res.json();
 
@@ -32,7 +33,7 @@ const redirect = useNavigate();
       // console.log(error);
     }else {
         //console.log(data);
-        redirect('/Login');
+        redirect('/login');
     }
   }
 
@@ -47,6 +48,8 @@ const redirect = useNavigate();
         <input type="text" required id='firstName' name='firstName' value={firstName} onChange={(e)=> setfirstName(e.target.value)} className='form3' /><br />
         <label htmlFor="lastName" className='mt-3'> Last Name</label><br />
         <input type="text" required id='lastName' name='lastName' value={lastName} onChange={(e)=> setlastName(e.target.value)} className='form3' /><br />
+        <label htmlFor="userName" className='mt-3'> UserName</label><br />
+        <input type="text" required id='userName' name='userName' value={userName} onChange={(e)=> setUserName(e.target.value)} className='form3' /><br />
         <label htmlFor="gender" className='mt-3'>Gender</label><br />
        <select name='gender' value={gender} onChange={(e)=> setGender(e.target.value)} className='opp'>
             <option value="">Select Gender</option>
@@ -61,7 +64,7 @@ const redirect = useNavigate();
         <input type="password" required id='password' name='password' value={password} onChange={(e)=> setPassword(e.target.value)} className='form3' /><br />
         <button type='submit'className='btn2 mt-4'>{load ? 'Signing Up......': 'Continue'}</button>
         </form>
-        <h6>Already have an account? <Link to="/Login">Login</Link></h6>
+        <h6>Already have an account? <Link to="/login">Login</Link></h6>
 
         </div>
     </Container>
