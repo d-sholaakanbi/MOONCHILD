@@ -37,7 +37,7 @@ export default function NavHead() {
                 </div>
                 </NavLink>
                 <div className="d-flex gap-3">
-                <NavLink to="/profile">
+                <NavLink to="/login">
                   <div>
                     <img src= {Profile} alt= "profile"/>
                   </div>
