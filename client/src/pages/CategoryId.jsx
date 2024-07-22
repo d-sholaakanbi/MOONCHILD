@@ -8,7 +8,7 @@ import ProductContainer from '../component/ProductContainer'
 
 export default function Categoryid() {
   const {categoryid} = useParams()
-  const {data, error, loading} = useFetch(`https://ecommtest.onrender.com/categories/${categoryid}/products`)
+  const {data, error, loading} = useFetch(`'https://moonchildapi.onrender.com/api/categories'${categoryid}/products`)
   return (
     <Container style={{marginTop: '5rem'}}>
         {loading && <Spinner/>}

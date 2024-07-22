@@ -8,7 +8,7 @@ import ProductContainer from '../component/ProductContainer'
 
 
 export default function Product() {
-    const {data, error, loading} = useFetch("https://ecommtest.onrender.com/products")
+    const {data, error, loading} = useFetch("'https://moonchildapi.onrender.com/api/products")
 
     const location = useLocation()
 

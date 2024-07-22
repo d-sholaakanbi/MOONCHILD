@@ -5,7 +5,7 @@ export default function Footer() {
   const links = [
     {
       name: 'facebook',
-      href: 'facebook.com',
+      href: 'https://www.facebook.com/',
       id: 1,
     },
     {

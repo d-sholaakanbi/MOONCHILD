@@ -7,7 +7,7 @@ import { Link , Outlet, useLocation } from 'react-router-dom'
 export default function Category() {
     const location = useLocation();
 
-    const {data } = useFetch("https://ecommtest.onrender.com/categories")
+    const {data } = useFetch('https://moonchildapi.onrender.com/api/categories')
   return (
     <Container style={{marginTop: '5rem'}} >
         <div className='d-flex align-items-center justify-content-center'>

@@ -2,18 +2,18 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavHead from './component/NavHead';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import Home from './pages/Home';
+import Home from './Pages/Home';
 import Footer from './component/Footer';
-import Product from './pages/Product';
-import Productid from './pages/Productid';
-import Category from './pages/Category';
-import CategoryId from './pages/CategoryId';
-import Search from './pages/Search';
+import Product from './Pages/Product';
+import Productid from './Pages/Productid';
+import Category from './Pages/Category';
+import CategoryId from './Pages/CategoryId';
+import Search from './Pages/Search';
 import { StateContext } from './Lib/ContextApi';
 import { Toaster } from 'react-hot-toast';
-import Cart from './pages/Cart';
-import Login from './pages/loginPage';
-import Signup from './pages/signup';
+import Cart from './Pages/Cart';
+import Login from './Pages/loginPage';
+import Signup from './Pages/Signup';
 
 function App() {
   const location = useLocation();
