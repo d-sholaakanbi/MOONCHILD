@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
@@ -32,7 +33,7 @@ export default function Navlocker({ isOpen, setOpen }) {
     <div className="position-fixed top-0 h-100">
       <div className="p-4 bg-light h-100" style={{ width: "24rem" }}>
         <div style={{ marginTop: "5rem" }}>
-          <NavLink to="/product" onClick={() => setOpen(!isOpen)}>
+          <NavLink to="/products" onClick={() => setOpen(!isOpen)}>
             <p className="text-dark">Products</p>
           </NavLink>
           <p className="text-dark">Categories</p>

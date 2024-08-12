@@ -55,6 +55,43 @@ outline: none;
   width: 300px;
 }
 
+.product-link {
+  text-decoration: none;
+  color: inherit; /* Ensures text color is inherited from parent */
+}
+
+.product-image-container {
+  overflow: hidden;
+  border-radius: 8px; /* Adds rounded corners */
+}
+
+.product-title {
+  font-size: 14px; /* Adjust font size as needed */
+}
+
+.product-price {
+  font-size: 14px; /* Adjust font size as needed */
+}
+
+.product-details {
+  margin-top: 8px;
+}
+
+.hero-product-container {
+  background-color: black;
+  padding: 20px; /* Optional: add some padding */
+   border-radius: 5px; /* Adds rounded corners */
+   width: auto;
+
+}
+.hero-category-container {
+  background-color: black;
+  padding: 20px; /* Optional: add some padding */
+   border-radius: 5px; /* Adds rounded corners */
+   width: auto;
+
+}
+
 
 @media screen and (min-width: 768px) {
   .adjustImg {

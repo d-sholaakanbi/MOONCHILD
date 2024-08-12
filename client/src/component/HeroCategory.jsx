@@ -1,35 +1,50 @@
-import React from 'react'
-import {Carousel, Button, Container} from 'react-bootstrap';
-import {Link} from "react-router-dom"
-import useFetch from '../Hooks/useFetch'
-import Spinner from '../utils/Spinner'
+import React from 'react';
+import { Carousel, Button, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import useFetch from '../Hooks/useFetch';
+import Spinner from '../utils/Spinner';
 
 export default function HeroCategory() {
-    const {data, error, loading} = useFetch("https://ecommtest.onrender.com/categories")
+  const { data, error, loading } = useFetch("https://moonchildapi.onrender.com/api/categories");
 
-    const bannerCategory = data.filter((category) => category.name === "Fashion" || category.name === "Earpiece")
+  // Detailed logging
+  console.log("HeroCategory data (detailed):", JSON.stringify(data, null, 2));
+  console.log("HeroCategory error:", error);
+  console.log("HeroCategory loading:", loading);
+
+  // Ensure data.categories is an array before filtering
+  const bannerCategories = data && Array.isArray(data.categories) ?
+    data.categories.filter(category => category.name === "Male" || category.name === "Female") :
+    [];
+
+  console.log("Filtered banner categories:", bannerCategories);
+
   return (
     <Container className="mt-5">
-         {loading && <Spinner/>}
-         {(error || data)&& (
-            <> 
-            {error && <p>{error.message}</p>}
-            <Carousel>
-                {bannerCategory.map((banner) => (
-                    <Carousel.Item key={banner.id}>
-                            <img className="d-block w-100" src={banner.image} alt={banner.name} style={{height:"600px", objectFit:'inherit'}}/>
-                            <Carousel.Caption>
-                                <h1 className="display-3">{banner.name}</h1>
-                                <Link to={`/categories/${banner.id}`}>
-                                    <Button variant="outline-dark" size="lg" className="border-none rounded-0">SEE MORE</Button>
-                                </Link>
-                            </Carousel.Caption>
-                    </Carousel.Item>
-                ))}
-             </Carousel>
-            </>
-         )}
-
+      {loading && <Spinner />}
+      {error && <p>{error.message}</p>}
+      {bannerCategories.length > 0 && (
+        <div className='hero-category-container'>
+          <Carousel>
+            {bannerCategories.map(banner => (
+              <Carousel.Item key={banner._id} style={{ borderRadius: '15px', overflow: 'hidden' }}>
+                <img
+                  className="d-block w-100"
+                  src={banner.image.url}
+                  alt={banner.name}
+                  style={{ height: "600px", objectFit: 'cover' }}
+                />
+                <Carousel.Caption>
+                  <h1 className="display-3">{banner.name}</h1>
+                  <Link to={`/categories/${banner.id}`}>
+                    <Button variant="outline-dark" size="lg" className="border-none rounded-0">SEE MORE</Button>
+                  </Link>
+                </Carousel.Caption>
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </div>
+      )}
     </Container>
-  )
+  );
 }

@@ -1,11 +1,12 @@
+/* eslint-disable react/react-in-jsx-scope */
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavHead from './component/NavHead';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Home from './Pages/Home';
 import Footer from './component/Footer';
-import Product from './Pages/Product';
-import Productid from './Pages/Productid';
+import Products from './Pages/Product';  // Consider renaming this component to `Product` to match the import
+import ProductId from './Pages/Productid';
 import Category from './Pages/Category';
 import CategoryId from './Pages/CategoryId';
 import Search from './Pages/Search';
@@ -18,9 +19,6 @@ import Signup from './Pages/Signup';
 function App() {
   const location = useLocation();
   const isAuthPage = location.pathname === '/login' || location.pathname === '/signup';
-  console.log('Current Path:', location.pathname);
-  console.log('Is Auth Page:', isAuthPage);
-
 
   return (
     <StateContext>
@@ -28,12 +26,10 @@ function App() {
       {!isAuthPage && <NavHead />}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="product" element={<Product />}>
-          <Route path=":productid" element={<Productid />} />
-        </Route>
-        <Route path="categories" element={<Category />}>
-          <Route path=":categoryid" element={<CategoryId />} />
-        </Route>
+        <Route path="products" element={<Products />} />  
+        <Route path="product/:productid" element={<ProductId />} />  
+        <Route path="categories" element={<Category />} />
+        <Route path="categories/:categoryid" element={<CategoryId />} /> 
         <Route path="search" element={<Search />} />
         <Route path="cart" element={<Cart />} />
         <Route path="login" element={<Login />} />
