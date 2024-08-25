@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+*{
+  font-family: "Bebas Neue", cursive;
+  text-decoration: none !important;
+  
+}
+
+.scrollbody {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+}
+
+.scrollbody::-webkit-scrollbar {
+  display: none;
+}
+
+.no-outline:focus {
+outline: none;
+}
+.moon{
+  padding-left: 400px;
+}
+.login {
+  width: 600px;
+  height: 645px;
+  background-color: white;
+  border: #292929 1px solid;
+}
+
+.form1 {
+  margin-top: 80px;
+}
+
+.form2 {
+  margin-top: 1rem;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 300px;
+}
+.boxa {
+  background-image: url("./images/BackgroungImg.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+}
+
+.form4 {
+  margin-top: 40px;
+}
+
+.form3 {
+  border: none;
+  border-bottom: 1px solid black;
+  width: 300px;
+}
+
+.product-link {
+  text-decoration: none;
+  color: inherit; /* Ensures text color is inherited from parent */
+}
+
+.product-image-container {
+  overflow: hidden;
+  border-radius: 8px; /* Adds rounded corners */
+}
+
+.product-title {
+  font-size: 14px; /* Adjust font size as needed */
+}
+
+.product-price {
+  font-size: 14px; /* Adjust font size as needed */
+}
+
+.product-details {
+  margin-top: 8px;
+}
+
+.hero-product-container {
+  background-color: black;
+  padding: 20px; /* Optional: add some padding */
+   border-radius: 5px; /* Adds rounded corners */
+   width: auto;
+
+}
+.hero-category-container {
+  background-color: black;
+  padding: 20px; /* Optional: add some padding */
+   border-radius: 5px; /* Adds rounded corners */
+   width: auto;
+
+}
+
+
+@media screen and (min-width: 768px) {
+  .adjustImg {
+    width: 400px !important;
+    height: 600px !important;
+  }
+}
