@@ -1,11 +1,12 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
+import { Button, Container } from 'react-bootstrap'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import BagItem  from '../component/Bagitem'
 import useFetch from '../Hooks/useFetch'
 import { useStateContext } from '../Lib/ContextApi'
 import formatCurrency  from '../utils/FormatCurrency'
 import Spinner from '../utils/Spinner'
+import { Link } from 'react-router-dom'
 
 export default function Cart() {
   const { error, loading, data } = useFetch(
@@ -18,9 +19,9 @@ export default function Cart() {
 
   return (
     <Container style={{ paddingTop: '5rem' }}>
-      {bagItems.length > 0 ? (
+      {bagItems?.length > 0 ? (
         <h6 className='text-start text-sm font-bold'>
-          CART ({bagItems.length})
+          CART ({bagItems?.length})
         </h6>
       ) : (
         <h6 className='text-center text-sm font-bold d-flex justify-content-center align-items-center py-5'>
@@ -53,7 +54,18 @@ export default function Cart() {
             <div className='flex space-x-3 font-bold text-xs text-slate-900'>
               <p>TOTAL</p>
               <span>{formatCurrency(getTotal)}</span>
-            </div>
+              </div>
+    <div className="flex justify-center items-center h-screen">
+    <div className="flex space-x-3 font-bold text-xs text-slate-900">
+    <a href='https://Wa.me/2348152366415'>
+    <Button variant="outline-dark" size="lg" className="border-none rounded-0">
+        BUY NOW
+      </Button>
+    </a>
+      
+    
+         </div>
+          </div>
           </div>
         </div>
       )}

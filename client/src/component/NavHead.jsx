@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Container} from 'react-bootstrap';
 import { Sling as Hamburger } from 'hamburger-react';
-import {CgShoppingCart} from 'react-icons/cg';
+import { FaShoppingCart } from "react-icons/fa";
 import Search from '../images/search.svg'
 import Profile from '../images/profile.svg'
 import {NavLink} from  'react-router-dom'
@@ -24,7 +24,7 @@ export default function NavHead() {
     },[isOpen])
 
   return (
-    <div className="position-fixed w-100 top-0" style={{zIndex:10}}>
+    <div className="position-fixed bg-secondary w-100 top-0" style={{zIndex:10}}>
         <Container className="d-flex align-items-center justify-content-between p-2">
             <div className="d-flex align-items-center gap-3 gap-md-5" style={{zIndex:"10"}}>
             <Hamburger toggled={isOpen} toggle={setOpen} size={20} direction="right" />
@@ -44,7 +44,7 @@ export default function NavHead() {
                 </NavLink>
                 <NavLink to="/cart">
                   <div className='position-relative'>
-                  <CgShoppingCart size="1.5rem" className="text-secondary"/>
+                  <FaShoppingCart size="1.5rem" className="text-black"/>
                   <p className='position-absolute top-0 start-100 translate-middle'>{bagQuantity > 0 ? bagQuantity : 0}</p>
                   </div>
                 </NavLink>

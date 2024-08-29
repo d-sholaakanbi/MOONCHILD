@@ -12,6 +12,8 @@ export default function BagItem({ item }) {
     decreaseBagQuantity,
   } = useStateContext();
   const {title, quantity, price, images} = item;
+  console.log(images);
+  
 
   return (
     <div className='mt-5'>
