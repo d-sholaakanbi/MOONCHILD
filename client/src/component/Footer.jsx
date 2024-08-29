@@ -10,17 +10,17 @@ export default function Footer() {
     },
     {
       name: 'twitter',
-      href: 'twitter.com',
+      href: 'https://www.twitter.com',
       id: 2,
     },
     {
       name: 'instagram',
-      href: 'instagram.com',
+      href: 'https://www.instagram.com',
       id: 3,
     },
     {
       name: 'pinterest',
-      href: 'pinterest.com',
+      href: 'https://www.pinterest.com',
       id: 4,
     },
   ]

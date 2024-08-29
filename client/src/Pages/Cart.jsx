@@ -6,7 +6,6 @@ import useFetch from '../Hooks/useFetch'
 import { useStateContext } from '../Lib/ContextApi'
 import formatCurrency  from '../utils/FormatCurrency'
 import Spinner from '../utils/Spinner'
-import { Link } from 'react-router-dom'
 
 export default function Cart() {
   const { error, loading, data } = useFetch(
